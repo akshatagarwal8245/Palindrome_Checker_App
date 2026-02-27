@@ -3,32 +3,27 @@ package Palindrome_Checker_App;
 import java.util.Scanner;
 
 public class PalindromeCheckerApp {
-    public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in);
+       public static void main(String[] args) {
 
-        System.out.print("Enter a word: ");
-        String word = scanner.nextLine();
+        String input = "radar";
 
-        boolean result = checkPalindrome(word);
+        char[] chars = input.toCharArray();
 
-        if (result) {
-            System.out.println(word + " is a palindrome.");
-        } else {
-            System.out.println(word + " is not a palindrome.");
-        }
+        int start = 0;
+        int end = chars.length - 1;
 
-        scanner.close();
-    }
+        boolean isPalindrome = true;
 
-    public static boolean checkPalindrome(String word) {
-
-        for (int i = 0; i < word.length() / 2; i++) {
-
-            if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
-                return false;
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
             }
+            start++;
+            end--;
         }
 
-        return true;
+        System.out.println("Input : " + input);
+        System.out.println("Is Palindrome? : " + isPalindrome);
     }
 }
