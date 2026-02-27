@@ -17,7 +17,10 @@ public class PalindromeCheckerApp {
             }
         }
 
-        // Print result
+
+
+        
+
         if (isPalindrome) {
             System.out.println(word + " is a palindrome.");
         } else {
